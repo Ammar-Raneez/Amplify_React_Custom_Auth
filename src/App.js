@@ -3,9 +3,8 @@ import { Auth } from 'aws-amplify';
 import './App.css';
 
 const initialFormState = {
-  username: '',
   password: '',
-  email: '',
+  tel: '',
   authCode: '',
   formType: 'signUp',
 };
@@ -43,13 +42,10 @@ function App() {
   const { formType } = formState;
 
   const signUp = async () => {
-    const { username, password, email } = formState;
+    const { tel, password } = formState;
     await Auth.signUp({
-      username,
+      username: tel,
       password,
-      attributes: {
-        email,
-      }
     });
     setFormState(() => ({
       ...formState,
@@ -58,8 +54,8 @@ function App() {
   };
 
   const confirmSignUp = async () => {
-    const { username, authCode } = formState;
-    await Auth.confirmSignUp(username, authCode);
+    const { tel, authCode } = formState;
+    await Auth.confirmSignUp(tel, authCode);
     setFormState(() => ({
       ...formState,
       formType: 'signIn'
@@ -79,9 +75,8 @@ function App() {
     <div className="App">
       {formType === 'signUp' && (
         <div>
-          <input name="username" onChange={onChange} placeholder="username" />
+          <input name="tel" onChange={onChange} placeholder="Tel num" />
           <input name="password" type="password" onChange={onChange} placeholder="password" />
-          <input name="email" onChange={onChange} placeholder="email" />
           <button onClick={signUp}>Sign Up</button>
           <button onClick={() => {
             setFormState(() => ({
@@ -99,7 +94,7 @@ function App() {
       )}
       {formType === 'signIn' && (
         <div>
-          <input name="username" onChange={onChange} placeholder="username" />
+          <input name="tel" onChange={onChange} placeholder="Tel num" />
           <input name="password" type="password" onChange={onChange} placeholder="password" />
           <button onClick={signIn}>Sign In</button>
         </div>

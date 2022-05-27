@@ -1,16 +1,16 @@
 {
   "auth": {
-    "customauth6f3ffc5c": {
+    "customauth6191fd586191fd58": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false,
       "frontendAuthConfig": {
         "socialProviders": [],
-        "usernameAttributes": [],
-        "signupAttributes": [
-          "EMAIL"
+        "usernameAttributes": [
+          "PHONE_NUMBER"
         ],
+        "signupAttributes": [],
         "passwordProtectionSettings": {
           "passwordPolicyMinLength": 8,
           "passwordPolicyCharacters": []
@@ -20,7 +20,7 @@
           "SMS"
         ],
         "verificationMechanisms": [
-          "EMAIL"
+          "PHONE_NUMBER"
         ]
       }
     }

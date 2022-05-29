@@ -1,0 +1,17 @@
+{
+  "trigger": true,
+  "modules": [
+    "boilerplate-verify"
+  ],
+  "parentResource": "customauthf2e6b9a5f2e6b9a5",
+  "functionName": "customauthf2e6b9a5f2e6b9a5VerifyAuthChallengeResponse",
+  "resourceName": "customauthf2e6b9a5f2e6b9a5VerifyAuthChallengeResponse",
+  "parentStack": "auth",
+  "triggerEnvs": [],
+  "triggerDir": "C:\\Users\\ACER\\AppData\\Roaming\\npm\\node_modules\\@aws-amplify\\cli\\node_modules\\@aws-amplify\\amplify-category-auth\\provider-utils\\awscloudformation\\triggers\\VerifyAuthChallengeResponse",
+  "triggerTemplate": "VerifyAuthChallengeResponse.json.ejs",
+  "triggerEventPath": "VerifyAuthChallengeResponse.event.json",
+  "roleName": "customauthf2e6b9a5f2e6b9a5VerifyAuthChallengeResponse",
+  "skipEdit": true,
+  "enableCors": false
+}

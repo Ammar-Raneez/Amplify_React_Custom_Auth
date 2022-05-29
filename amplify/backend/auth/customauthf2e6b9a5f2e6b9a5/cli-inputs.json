@@ -1,8 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "resourceNameTruncated": "custom6191fd58",
-    "userPoolName": "customauth6191fd58_userpool_6191fd58",
+    "identityPoolName": "customauthf2e6b9a5_identitypool_f2e6b9a5",
+    "allowUnauthenticatedIdentities": false,
+    "resourceNameTruncated": "customf2e6b9a5",
+    "userPoolName": "customauthf2e6b9a5_userpool_f2e6b9a5",
     "autoVerifiedAttributes": [
       "phone_number"
     ],
@@ -17,28 +19,41 @@
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
-    "requiredAttributes": [],
+    "requiredAttributes": [
+      "phone_number"
+    ],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
-      "email"
-    ],
-    "userpoolClientReadAttributes": [
-      "email"
-    ],
-    "userpoolClientLambdaRole": "custom6191fd58_userpoolclient_lambda_role",
-    "userpoolClientSetAttributes": true,
-    "sharedId": "6191fd58",
-    "resourceName": "customauth6191fd586191fd58",
-    "authSelections": "userPoolOnly",
-    "useDefault": "manual",
-    "usernameAttributes": [
       "phone_number"
     ],
+    "userpoolClientReadAttributes": [
+      "phone_number"
+    ],
+    "userpoolClientLambdaRole": "customf2e6b9a5_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": true,
+    "sharedId": "f2e6b9a5",
+    "resourceName": "customauthf2e6b9a5f2e6b9a5",
+    "authSelections": "identityPoolAndUserPool",
+    "useDefault": "manual",
+    "thirdPartyAuth": false,
     "userPoolGroups": false,
     "adminQueries": false,
-    "triggers": {},
+    "triggers": {
+      "CreateAuthChallenge": [
+        "boilerplate-create-challenge"
+      ],
+      "DefineAuthChallenge": [
+        "boilerplate-define-challenge"
+      ],
+      "PreSignup": [
+        "custom"
+      ],
+      "VerifyAuthChallengeResponse": [
+        "boilerplate-verify"
+      ]
+    },
     "hostedUI": false,
     "userPoolGroupList": [],
     "serviceName": "Cognito",

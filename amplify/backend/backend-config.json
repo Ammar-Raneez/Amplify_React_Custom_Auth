@@ -1,16 +1,75 @@
 {
+  "function": {
+    "customauthf2e6b9a5f2e6b9a5CreateAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "customauthf2e6b9a5f2e6b9a5DefineAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "customauthf2e6b9a5f2e6b9a5PreSignup": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "customauthf2e6b9a5f2e6b9a5VerifyAuthChallengeResponse": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
   "auth": {
-    "customauth6191fd586191fd58": {
+    "customauthf2e6b9a5f2e6b9a5": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "customAuth": false,
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "customauthf2e6b9a5f2e6b9a5CreateAuthChallenge",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "customauthf2e6b9a5f2e6b9a5DefineAuthChallenge",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "customauthf2e6b9a5f2e6b9a5PreSignup",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "customauthf2e6b9a5f2e6b9a5VerifyAuthChallengeResponse",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        }
+      ],
+      "customAuth": true,
       "frontendAuthConfig": {
         "socialProviders": [],
-        "usernameAttributes": [
+        "usernameAttributes": [],
+        "signupAttributes": [
           "PHONE_NUMBER"
         ],
-        "signupAttributes": [],
         "passwordProtectionSettings": {
           "passwordPolicyMinLength": 8,
           "passwordPolicyCharacters": []
